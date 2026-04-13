@@ -4,106 +4,685 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - SourceExtract</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --bg-secondary: #f7f7f5;
+            --bg-card: #ffffff;
+            --text: #1a1a1a;
+            --text-muted: #6b6b6b;
+            --text-faint: #9b9b9b;
+            --border: rgba(0,0,0,0.10);
+            --accent: #5340c0;
+            --accent-bg: #EEEDFE;
+            --accent-text: #3C3489;
+            --green-bg: #EAF3DE;
+            --green-text: #3B6D11;
+            --teal-bg: #E1F5EE;
+            --teal-text: #0F6E56;
+            --amber-bg: #FAEEDA;
+            --amber-text: #854F0B;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #1a1a1a;
+                --bg-secondary: #242424;
+                --bg-card: #242424;
+                --text: #f0f0f0;
+                --text-muted: #a0a0a0;
+                --text-faint: #666;
+                --border: rgba(255,255,255,0.10);
+                --accent: #8a7fe8;
+                --accent-bg: #26215C;
+                --accent-text: #CECBF6;
+                --green-bg: #173404;
+                --green-text: #C0DD97;
+                --teal-bg: #04342C;
+                --teal-text: #9FE1CB;
+                --amber-bg: #412402;
+                --amber-text: #FAC775;
+            }
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+        header {
+            background: var(--bg);
+            border-bottom: 0.5px solid var(--border);
+            padding: 0 2rem;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .logo {
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--text);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .logo-icon {
+            width: 28px;
+            height: 28px;
+            background: var(--accent-bg);
+            border-radius: 7px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .logo-icon svg { width: 16px; height: 16px; }
+        nav { display: flex; gap: 1.5rem; }
+        nav a {
+            font-size: 14px;
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+        nav a:hover { color: var(--text); }
+        .hero {
+            background: var(--accent-bg);
+            border-bottom: 0.5px solid var(--border);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--bg-card);
+            border: 0.5px solid var(--border);
+            border-radius: 20px;
+            padding: 4px 12px;
+            font-size: 12px;
+            color: var(--accent-text);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        .hero h1 {
+            font-size: 30px;
+            font-weight: 600;
+            color: var(--accent-text);
+            margin-bottom: 0.5rem;
+        }
+        .hero p {
+            font-size: 15px;
+            color: var(--accent-text);
+            opacity: 0.75;
+        }
+        .main-layout {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        @media (max-width: 680px) {
+            .main-layout { grid-template-columns: 1fr; }
+            .sidebar { display: none; }
+        }
+        .sidebar {
+            position: sticky;
+            top: 80px;
+        }
+        .sidebar-label {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-faint);
+            margin-bottom: 0.75rem;
+        }
+        .sidebar-nav { display: flex; flex-direction: column; gap: 2px; }
+        .sidebar-nav a {
+            font-size: 13px;
+            color: var(--text-muted);
+            text-decoration: none;
+            padding: 5px 8px;
+            border-radius: 6px;
+            transition: background 0.1s;
+        }
+        .sidebar-nav a:hover {
+            background: var(--bg-secondary);
+            color: var(--text);
+        }
+        .content section {
+            margin-bottom: 2.5rem;
+            padding-bottom: 2.5rem;
+            border-bottom: 0.5px solid var(--border);
+        }
+        .content section:last-of-type { border-bottom: none; }
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 1rem;
+        }
+        .section-num {
+            width: 26px;
+            height: 26px;
+            background: var(--bg-secondary);
+            border-radius: 50%;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        h2 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text);
+        }
+        h3 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text);
+            margin: 1.25rem 0 0.4rem;
+        }
+        p { color: var(--text-muted); margin-bottom: 0.75rem; font-size: 15px; }
+        p:last-child { margin-bottom: 0; }
+        .highlight-box {
+            border: 0.5px solid var(--border);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+        }
+        .highlight-box.green {
+            background: var(--green-bg);
+            border-color: transparent;
+        }
+        .highlight-box.green p { color: var(--green-text); }
+        .highlight-box.teal {
+            background: var(--teal-bg);
+            border-color: transparent;
+        }
+        .highlight-box.teal p { color: var(--teal-text); }
+        .highlight-box.amber {
+            background: var(--amber-bg);
+            border-color: transparent;
+        }
+        .highlight-box.amber p { color: var(--amber-text); }
+        .highlight-box.accent {
+            background: var(--accent-bg);
+            border-color: transparent;
+        }
+        .highlight-box.accent p { color: var(--accent-text); }
+        .highlight-box p { font-size: 14px; margin-bottom: 0; }
+        .highlight-box strong { font-weight: 600; }
+        .method-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 1rem 0;
+        }
+        @media (max-width: 480px) { .method-grid { grid-template-columns: 1fr; } }
+        .method-card {
+            background: var(--bg-secondary);
+            border-radius: 10px;
+            padding: 0.9rem 1rem;
+        }
+        .method-card .method-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 4px;
+        }
+        .method-card p {
+            font-size: 13px;
+            margin: 0;
+            line-height: 1.5;
+        }
+        .permission-row {
+            display: flex;
+            gap: 12px;
+            padding: 0.9rem 0;
+            border-bottom: 0.5px solid var(--border);
+        }
+        .permission-row:last-child { border-bottom: none; }
+        .perm-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 16px;
+        }
+        .perm-content { flex: 1; }
+        .perm-title { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+        .perm-desc { font-size: 13px; color: var(--text-muted); margin: 0; line-height: 1.5; }
+        .perm-badge {
+            font-size: 11px;
+            font-weight: 500;
+            padding: 2px 8px;
+            border-radius: 20px;
+            align-self: flex-start;
+            white-space: nowrap;
+        }
+        .badge-optional {
+            background: var(--green-bg);
+            color: var(--green-text);
+        }
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+            margin: 1rem 0;
+        }
+        .data-table th {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--text-faint);
+            padding: 8px 10px;
+            text-align: left;
+            border-bottom: 0.5px solid var(--border);
+        }
+        .data-table td {
+            padding: 10px;
+            color: var(--text-muted);
+            border-bottom: 0.5px solid var(--border);
+            vertical-align: top;
+        }
+        .data-table tr:last-child td { border-bottom: none; }
+        .data-table td:first-child { color: var(--text); font-weight: 500; }
+        .dot-no { color: var(--green-text); font-weight: 600; }
+        .contact-card {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 1.25rem;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            margin-top: 1rem;
+        }
+        .contact-avatar {
+            width: 44px;
+            height: 44px;
+            background: var(--accent-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--accent-text);
+            flex-shrink: 0;
+        }
+        .contact-info .name { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+        .contact-info .role { font-size: 13px; color: var(--text-muted); margin-bottom: 10px; }
+        .contact-info a {
+            display: inline-block;
+            font-size: 13px;
+            color: var(--accent);
+            text-decoration: none;
+            background: var(--accent-bg);
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        .toc-meta {
+            font-size: 13px;
+            color: var(--text-faint);
+            margin-top: 1.25rem;
+            padding-top: 1.25rem;
+            border-top: 0.5px solid var(--border);
+        }
+        footer {
+            border-top: 0.5px solid var(--border);
+            padding: 1.5rem 2rem;
+            text-align: center;
+        }
+        footer p { font-size: 13px; color: var(--text-faint); margin: 0; }
+        ul.prose-list {
+            padding-left: 1.25rem;
+            margin: 0.5rem 0 0.75rem;
+        }
+        ul.prose-list li {
+            font-size: 15px;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+            line-height: 1.6;
+        }
+    </style>
 </head>
 <body>
 
-    <header>
-        <h2>SourceExtract</h2>
-        <nav class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="support.html">Support</a>
-        </nav>
-    </header>
-
-    <div class="container">
-        <h1>Privacy Policy for SourceExtract</h1>
-        <p><strong>Effective Date:</strong> April 13, 2026</p>
-
-        <p>
-            This Privacy Policy describes how your information is handled when you use the
-            SourceExtract iOS application ("the App").
-        </p>
-
-        <h2>1. Data Collection and Usage</h2>
-        <p>
-            SourceExtract is designed with privacy as a fundamental priority. The App operates
-            entirely locally on your device as a web browser and media extraction tool.
-        </p>
-        <p>
-            We do not collect, store, or transmit your browsing history, search queries,
-            bookmarks, or the media you download.
-        </p>
-        <p>
-            <strong>No External Servers:</strong> The App does not send any of your personal data
-            or browsing activity to any external servers or third-party analytics services.
-        </p>
-
-        <h2>2. Local Storage</h2>
-        <p>
-            All data generated by your use of the App remains strictly on your iOS device.
-        </p>
-        <p>
-            <strong>Downloaded Media:</strong> Images and videos you choose to collect are saved
-            directly to your device's native Photo Library or to your local Files app,
-            depending on your selected preferences.
-        </p>
-        <p>
-            <strong>App Data:</strong> Your active tabs, bookmarks, and local browsing history are
-            stored using native Apple frameworks (such as UserDefaults and local file storage)
-            and never leave your device. You can clear this data at any time within the App's settings.
-        </p>
-
-        <h2>3. Permissions</h2>
-        <p>
-            To function properly, SourceExtract may request the following native iOS permissions:
-        </p>
-        <p>
-            <strong>Photo Library Access:</strong> Required only if you choose to save extracted
-            media directly to your Photos app. The App only writes to your library and does not
-            scan or transmit your existing photos.
-        </p>
-
-        <h2>4. Third-Party Websites</h2>
-        <p>
-            SourceExtract functions as a web browser. By using the App, you will navigate to and
-            interact with third-party websites. This Privacy Policy does not apply to those
-            external sites, and we are not responsible for their content, privacy practices,
-            or data collection methods.
-        </p>
-
-        <h2>5. Changes to This Policy</h2>
-        <p>
-            We may update this Privacy Policy from time to time to reflect changes in our practices
-            or for legal or regulatory reasons. Any updates will be posted on this page with a revised
-            "Effective Date."
-        </p>
-
-        <h2>6. Contact</h2>
-        <p>
-            If you have any questions, concerns, or requests regarding this Privacy Policy or how
-            your data is handled, please contact us:
-        </p>
-
-        <div class="card" style="margin-top: 1rem;">
-            <p><strong>Developer:</strong> Eli Linden</p>
-            <p><strong>Email:</strong> support@yourdomain.com</p>
-            <p>
-                <strong>Support:</strong>
-                <a href="support.html" style="color: var(--accent); text-decoration: none;">
-                    Visit Support Page
-                </a>
-            </p>
+<header>
+    <a href="index.html" class="logo">
+        <div class="logo-icon">
+            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="2" width="5" height="5" rx="1" fill="#534AB7"/>
+                <rect x="9" y="2" width="5" height="5" rx="1" fill="#534AB7" opacity="0.5"/>
+                <rect x="2" y="9" width="5" height="5" rx="1" fill="#534AB7" opacity="0.5"/>
+                <rect x="9" y="9" width="5" height="5" rx="1" fill="#534AB7" opacity="0.3"/>
+            </svg>
         </div>
+        SourceExtract
+    </a>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="support.html">Support</a>
+    </nav>
+</header>
 
-        <p style="margin-top: 2rem; font-size: 0.85rem; color: var(--text-secondary);">
-            *Reminder: Replace the placeholder email address before publishing.
-        </p>
+<div class="hero">
+    <div class="hero-badge">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="5" fill="#3C3489"/></svg>
+        Last updated: April 13, 2026
     </div>
+    <h1>Privacy Policy</h1>
+    <p>SourceExtract is built on a simple principle: your data stays on your device.</p>
+</div>
 
-    <footer>
-        <p>&copy; 2026 SourceExtract. All Rights Reserved.</p>
-    </footer>
+<div class="main-layout">
+
+    <aside class="sidebar">
+        <div class="sidebar-label">Contents</div>
+        <nav class="sidebar-nav">
+            <a href="#overview">Overview</a>
+            <a href="#data-collected">What we collect</a>
+            <a href="#local-storage">Local storage</a>
+            <a href="#scan-activity">Scan &amp; browser activity</a>
+            <a href="#permissions">Permissions</a>
+            <a href="#network">Network requests</a>
+            <a href="#third-party">Third-party sites</a>
+            <a href="#data-sharing">Data sharing</a>
+            <a href="#children">Children</a>
+            <a href="#your-rights">Your rights</a>
+            <a href="#changes">Policy changes</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="toc-meta">
+            Effective: April 13, 2026<br>
+            Applies to: SourceExtract iOS
+        </div>
+    </aside>
+
+    <div class="content">
+
+        <section id="overview">
+            <div class="section-header">
+                <div class="section-num">&#9679;</div>
+                <h2>Overview</h2>
+            </div>
+            <p>This Privacy Policy explains how SourceExtract ("the App," "we," "our") handles information when you use our iOS application. SourceExtract is a private web browser and media extraction tool — it lets you browse any website and extract images and videos found on those pages.</p>
+            <p>We built SourceExtract with a clear privacy commitment: <strong>we do not collect, transmit, or store any of your personal data on external servers.</strong> The App operates entirely on your device.</p>
+            <div class="highlight-box green">
+                <p><strong>The short version:</strong> SourceExtract has no accounts, no analytics, no ad targeting, no servers that receive your browsing data, and no third-party SDKs that track you. Everything the App produces — your browsing history, downloaded media, bookmarks, and scan results — lives only on your iPhone or iPad.</p>
+            </div>
+        </section>
+
+        <section id="data-collected">
+            <div class="section-header">
+                <div class="section-num">1</div>
+                <h2>What we collect</h2>
+            </div>
+            <p>We do not collect personal information. The table below summarizes every category of data the App generates and where it lives.</p>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Data type</th>
+                        <th>Where it's stored</th>
+                        <th>Sent off-device?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Browsing history</td>
+                        <td>Device local storage (UserDefaults)</td>
+                        <td><span class="dot-no">No</span></td>
+                    </tr>
+                    <tr>
+                        <td>Open tabs &amp; tab state</td>
+                        <td>Device local storage</td>
+                        <td><span class="dot-no">No</span></td>
+                    </tr>
+                    <tr>
+                        <td>Bookmarks</td>
+                        <td>Device local storage</td>
+                        <td><span class="dot-no">No</span></td>
+                    </tr>
+                    <tr>
+                        <td>Scan history &amp; results</td>
+                        <td>Device local storage</td>
+                        <td><span class="dot-no">No</span></td>
+                    </tr>
+                    <tr>
+                        <td>Downloaded media (images &amp; videos)</td>
+                        <td>Photos library or Files app on your device</td>
+                        <td><span class="dot-no">No</span></td>
+                    </tr>
+                    <tr>
+                        <td>App preferences &amp; scan settings</td>
+                        <td>Device local storage (UserDefaults)</td>
+                        <td><span class="dot-no">No</span></td>
+                    </tr>
+                    <tr>
+                        <td>Crash reports</td>
+                        <td>Apple's built-in crash reporter only (if you have opted in via iOS settings)</td>
+                        <td>Apple only (per your iOS setting)</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>We do not use any third-party analytics SDKs (e.g., Firebase, Mixpanel, Amplitude), advertising frameworks, or session-recording tools.</p>
+        </section>
+
+        <section id="local-storage">
+            <div class="section-header">
+                <div class="section-num">2</div>
+                <h2>Local storage</h2>
+            </div>
+            <p>All data generated by your use of SourceExtract is stored locally on your iOS device using native Apple frameworks. No data is synced to our servers or any cloud service we operate.</p>
+
+            <h3>Downloaded media</h3>
+            <p>Images and videos you choose to save are written directly to your device's native Photo Library or to your local Files app, depending on your selection. We only write files you explicitly choose to save — we do not access, read, or transmit any pre-existing files in your library.</p>
+
+            <h3>App data</h3>
+            <p>Your active tabs, browsing history, bookmarks, and scan results are stored using Apple's <code>UserDefaults</code> and local file storage APIs. This data never leaves your device. You can delete all App data at any time by clearing history and data within the App's settings, or by deleting the App entirely.</p>
+
+            <h3>Scan history</h3>
+            <p>SourceExtract maintains a local history of pages you have previously scanned, including a snapshot of the media found during each scan. This is stored on-device so you can revisit prior scan results without re-browsing. This history is not uploaded anywhere and can be cleared from within the App.</p>
+
+            <h3>iCloud sync</h3>
+            <p>SourceExtract does not currently use iCloud or any Apple sync services. Your data is stored solely on the local device and is not backed up or synchronized via iCloud Drive.</p>
+        </section>
+
+        <section id="scan-activity">
+            <div class="section-header">
+                <div class="section-num">3</div>
+                <h2>Scan &amp; browser activity</h2>
+            </div>
+            <p>SourceExtract uses four independent methods to discover media on web pages you visit. Understanding how these work is important for understanding your privacy.</p>
+
+            <div class="method-grid">
+                <div class="method-card">
+                    <div class="method-title">IMG &amp; picture tags</div>
+                    <p>Locates standard images, <code>srcset</code> variants, SVG files, and <code>&lt;picture&gt;</code> elements in the page HTML. No external requests are made by the scanner itself.</p>
+                </div>
+                <div class="method-card">
+                    <div class="method-title">Video tags</div>
+                    <p>Finds embedded <code>&lt;video&gt;</code> elements and associated source files already loaded by the page. The scanner reads what the page has already fetched.</p>
+                </div>
+                <div class="method-card">
+                    <div class="method-title">CSS backgrounds</div>
+                    <p>Scans up to 2,500 page elements to detect images applied via stylesheets. Operates entirely within the page's existing DOM and loaded resources.</p>
+                </div>
+                <div class="method-card">
+                    <div class="method-title">Network resources</div>
+                    <p>Captures media URLs loaded during the page lifecycle via the Performance API. Reads from the browser's existing resource timing data — no additional network requests.</p>
+                </div>
+            </div>
+
+            <div class="highlight-box teal">
+                <p><strong>Important:</strong> The scanner reads resources that the page itself has already loaded into your browser. It does not independently fetch URLs, ping remote servers, or generate network traffic of its own. Any network activity you see is the normal traffic of the websites you visit.</p>
+            </div>
+
+            <p>The scanner also traverses Shadow DOM, accesses same-origin iframes, and resolves blob and data URLs entirely within the local browser context.</p>
+        </section>
+
+        <section id="permissions">
+            <div class="section-header">
+                <div class="section-num">4</div>
+                <h2>iOS permissions</h2>
+            </div>
+            <p>SourceExtract requests only the permissions required for features you choose to use. Below is a complete list of permissions the App may request, along with why each is needed.</p>
+
+            <div style="margin-top: 0.5rem;">
+                <div class="permission-row">
+                    <div class="perm-icon">&#128247;</div>
+                    <div class="perm-content">
+                        <div class="perm-title">Photo Library (Write only)</div>
+                        <p class="perm-desc">Required only if you choose to save extracted media directly to your Photos app. The App uses <code>PHPhotoLibrary</code> in write-only mode — it adds files you explicitly save but never reads, scans, or accesses your existing photos or albums.</p>
+                    </div>
+                    <span class="perm-badge badge-optional">Optional</span>
+                </div>
+                <div class="permission-row">
+                    <div class="perm-icon">&#127760;</div>
+                    <div class="perm-content">
+                        <div class="perm-title">Internet access</div>
+                        <p class="perm-desc">Required for SourceExtract to function as a web browser. All network traffic is initiated by you through normal browsing. The App itself does not initiate background connections to any SourceExtract-operated servers.</p>
+                    </div>
+                    <span class="perm-badge badge-optional">Required</span>
+                </div>
+            </div>
+            <p style="margin-top: 1rem;">We do not request access to your location, microphone, camera, contacts, calendar, or any other sensitive iOS system data.</p>
+        </section>
+
+        <section id="network">
+            <div class="section-header">
+                <div class="section-num">5</div>
+                <h2>Network requests made by the App</h2>
+            </div>
+            <p>It is important to distinguish between two types of network activity when using SourceExtract:</p>
+
+            <h3>Your browsing traffic</h3>
+            <p>When you visit a website in SourceExtract, your device makes normal HTTP/HTTPS requests to that website's servers. This is standard web browsing behavior — no different from using Safari or any other browser. SourceExtract does not intercept, log, or forward this traffic.</p>
+
+            <h3>SourceExtract-initiated traffic</h3>
+            <p>SourceExtract itself does not make any outbound connections to servers operated by us. There are no:</p>
+            <ul class="prose-list">
+                <li>Analytics or telemetry pings</li>
+                <li>License validation requests</li>
+                <li>Feature-flag or configuration fetches from our servers</li>
+                <li>Remote logging endpoints</li>
+                <li>Ad network calls</li>
+            </ul>
+
+            <h3>Media download requests</h3>
+            <p>When you tap to download media, the App makes a direct HTTP request from your device to the media URL on the third-party website. These requests go directly to the website hosting the content — not through any SourceExtract proxy or server.</p>
+
+            <div class="highlight-box accent">
+                <p><strong>No proxy, no middleman.</strong> SourceExtract does not route your traffic through our servers. Your device communicates directly with the websites you visit.</p>
+            </div>
+        </section>
+
+        <section id="third-party">
+            <div class="section-header">
+                <div class="section-num">6</div>
+                <h2>Third-party websites</h2>
+            </div>
+            <p>SourceExtract is a web browser. When you use the App, you navigate to and interact with third-party websites that are entirely outside our control. This Privacy Policy applies only to SourceExtract itself — not to the websites you visit within it.</p>
+            <p>Third-party websites may:</p>
+            <ul class="prose-list">
+                <li>Use cookies, pixel trackers, or fingerprinting techniques</li>
+                <li>Collect data about your visit in accordance with their own privacy policies</li>
+                <li>Load resources from advertising networks or analytics services</li>
+                <li>Serve content protected by terms of use or copyright</li>
+            </ul>
+            <p>We encourage you to review the privacy policies of any websites you visit. SourceExtract inherits the standard privacy properties of iOS's WKWebView, including its built-in tracking protection features.</p>
+            <div class="highlight-box amber">
+                <p><strong>Regarding media ownership:</strong> SourceExtract helps you discover and save media that is technically accessible on a page. It is your responsibility to ensure your use of downloaded content complies with the applicable copyright, terms of service, and intellectual property rights of the site you are visiting. SourceExtract does not review, filter, or moderate the content of third-party websites.</p>
+            </div>
+        </section>
+
+        <section id="data-sharing">
+            <div class="section-header">
+                <div class="section-num">7</div>
+                <h2>Data sharing &amp; disclosure</h2>
+            </div>
+            <p>We do not sell, rent, or share your data with any third parties because we do not collect it in the first place. We have no user accounts, no user database, and no data broker relationships.</p>
+            <p>The only scenarios in which data about your App usage could conceivably be shared are:</p>
+            <ul class="prose-list">
+                <li><strong>Apple crash reporting:</strong> If you have opted into sharing diagnostic data with Apple via iOS system settings, Apple's standard crash reporter may capture anonymized crash logs and share them with us through App Store Connect. You can disable this in Settings &gt; Privacy &amp; Security &gt; Analytics &amp; Improvements.</li>
+                <li><strong>Legal requirements:</strong> If we are required by law, court order, or valid legal process to disclose information, we will comply to the extent required. Because we do not store your data, we have nothing to provide beyond what is already described above.</li>
+            </ul>
+        </section>
+
+        <section id="children">
+            <div class="section-header">
+                <div class="section-num">8</div>
+                <h2>Children's privacy</h2>
+            </div>
+            <p>SourceExtract is not directed at or designed for children under the age of 13, or under the applicable age of digital consent in your jurisdiction. We do not knowingly collect personal information from children.</p>
+            <p>Because SourceExtract is a general-purpose web browser, parents should be aware that the App provides access to the open internet. We recommend appropriate parental supervision for younger users. iOS Screen Time controls and content restrictions can be used alongside SourceExtract.</p>
+        </section>
+
+        <section id="your-rights">
+            <div class="section-header">
+                <div class="section-num">9</div>
+                <h2>Your rights &amp; data control</h2>
+            </div>
+            <p>Because all App data is stored locally on your device, you have direct and complete control over it at all times.</p>
+            <h3>Clear App data</h3>
+            <p>You can clear your browsing history, bookmarks, scan history, and open tabs from within the App's settings at any time.</p>
+            <h3>Delete the App</h3>
+            <p>Deleting SourceExtract from your device removes all locally stored App data, including history, bookmarks, and cached data, in accordance with standard iOS behavior.</p>
+            <h3>Media you've saved</h3>
+            <p>Images and videos you've saved to your Photo Library or Files app are yours to manage independently of the App. Deleting SourceExtract does not remove files already saved to your Photos or Files.</p>
+            <h3>Requests &amp; inquiries</h3>
+            <p>If you have questions about your data or wish to submit a privacy-related request, please contact us at the address in the Contact section below. Because we hold no data about you on our servers, most requests can be fulfilled entirely on-device by you directly.</p>
+        </section>
+
+        <section id="changes">
+            <div class="section-header">
+                <div class="section-num">10</div>
+                <h2>Changes to this policy</h2>
+            </div>
+            <p>We may update this Privacy Policy from time to time to reflect changes in App features, applicable law, or regulatory requirements. When we make changes, we will update the "Effective Date" at the top of this page.</p>
+            <p>For material changes — those that significantly affect how data is handled — we will provide notice through the App Store release notes for the relevant App update, or within the App itself where appropriate.</p>
+            <p>We encourage you to review this page periodically. Continued use of the App after any changes take effect constitutes your acceptance of the updated policy.</p>
+        </section>
+
+        <section id="contact">
+            <div class="section-header">
+                <div class="section-num">11</div>
+                <h2>Contact</h2>
+            </div>
+            <p>If you have any questions, concerns, or requests related to this Privacy Policy, please reach out:</p>
+            <div class="contact-card">
+                <div class="contact-avatar">EL</div>
+                <div class="contact-info">
+                    <div class="name">Eli Linden</div>
+                    <div class="role">Developer, SourceExtract</div>
+                    <a href="mailto:support@yourdomain.com">support@yourdomain.com</a>
+                </div>
+            </div>
+            <p style="margin-top: 1rem; font-size: 13px; color: var(--text-faint);">&#9888; Replace the placeholder email address before publishing.</p>
+        </section>
+
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 SourceExtract &mdash; All Rights Reserved &mdash; <a href="support.html" style="color: inherit;">Support</a></p>
+</footer>
 
 </body>
 </html>
