@@ -3,82 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support - SourceExtract</title>
+    <title>Support — SourceExtract</title>
+    <meta name="description" content="Get help with SourceExtract. Find answers to common questions about media extraction, downloads, and troubleshooting.">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-    <h2>SourceExtract</h2>
-    <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="support.html">Support</a>
-        <a href="privacy.html">Privacy</a>
-    </nav>
-</header>
+    <header>
+        <a href="index.html" class="logo">
+            <div class="logo-icon">
+                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="5" height="5" rx="1" fill="#3b82f6"/>
+                    <rect x="9" y="2" width="5" height="5" rx="1" fill="#3b82f6" opacity="0.5"/>
+                    <rect x="2" y="9" width="5" height="5" rx="1" fill="#3b82f6" opacity="0.5"/>
+                    <rect x="9" y="9" width="5" height="5" rx="1" fill="#3b82f6" opacity="0.3"/>
+                </svg>
+            </div>
+            SourceExtract
+        </a>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="support.html">Support</a>
+            <a href="privacy.html">Privacy</a>
+        </nav>
+    </header>
 
-    <div class="container">
-        <h1>App Support for SourceExtract</h1>
+    <main>
 
-        <div class="card">
-            <h3>Need help with SourceExtract?</h3>
+        <div class="page-header">
+            <h1>Support</h1>
             <p>
-                If you are experiencing issues with media collection, batch downloading,
-                or have a general question about the browser, please reach out to us.
-                We are dedicated to making SourceExtract the best media extraction browser on iOS.
+                Having trouble with SourceExtract? Find answers below or reach out directly.
+                We're dedicated to making SourceExtract the best media extraction browser on iOS.
             </p>
         </div>
 
-        <div class="card" style="margin-top: 2rem;">
-            <h3>Contact Us</h3>
-            <p><strong>Email:</strong> support@yourdomain.com</p>
-            <p style="margin-top: 0.5rem;">
-                <strong>Bug Reports & Feature Requests:</strong>
-                Submit issues or request features via our GitHub page.
-            </p>
+        <div class="container">
+
+            <div class="card">
+                <div class="card-icon">&#9993;&#65039;</div>
+                <h3>Contact us</h3>
+                <p><strong style="color: var(--text);">Email:</strong> batchcompressvideos@gmail.com</p>
+                <p><strong style="color: var(--text);">Bug reports &amp; feature requests:</strong> Submit issues or request features via our GitHub page.</p>
+            </div>
+
+            <h2 class="section-subtitle">Frequently Asked Questions</h2>
+
+            <div class="card">
+                <p class="q">Why didn't an image or video download?</p>
+                <p>Some websites use aggressive anti-scraping techniques, restrict media behind logins, or load content dynamically via lazy loading. Make sure the page has fully loaded and scroll through the page before tapping the collect button. If content is gated behind authentication, log in first before scanning.</p>
+            </div>
+
+            <div class="card">
+                <p class="q">Where are my downloads saved?</p>
+                <p>You can save media directly to your iOS Photo Library or to a dedicated "SourceExtract" folder in your Files app. Permissions can be managed in your iOS Settings under Privacy &amp; Security.</p>
+            </div>
+
+            <div class="card">
+                <p class="q">Why are some images skipped during deduplication?</p>
+                <p>SourceExtract identifies duplicates based on exact source URLs. If the same image is hosted at different URLs, both may appear. However, identical URLs are only shown once to keep results clean and organized. You can adjust deduplication behavior in the app's scan settings.</p>
+            </div>
+
+            <div class="card">
+                <p class="q">What file formats does SourceExtract support?</p>
+                <p>SourceExtract detects and downloads PNG, JPG, GIF, WebP, AVIF, SVG, BMP, ICO, TIFF, HEIC, MP4, MOV, WebM, and more. The scanner identifies media by content type, so even files with unusual extensions are recognized.</p>
+            </div>
+
+            <div class="card">
+                <p class="q">Can I scan password-protected pages?</p>
+                <p>Yes. SourceExtract is a full browser, so you can log in to any website normally. Once authenticated, tap the sparkle button to scan the page. Your credentials are handled by the standard iOS web view and are never accessed by the scanner.</p>
+            </div>
+
+            <div class="card">
+                <p class="q">Does SourceExtract work on iPad?</p>
+                <p>Absolutely. SourceExtract is designed for both iPhone and iPad with adaptive layouts that take advantage of the larger screen. All features work identically across both devices.</p>
+            </div>
+
         </div>
 
-        <h2>Frequently Asked Questions (FAQ)</h2>
-
-        <div class="card" style="margin-top: 1rem;">
-            <p><strong>Why didn't an image or video download?</strong></p>
-            <p>
-                Some websites use aggressive anti-scraping techniques, restrict media behind
-                logins, or load content dynamically (lazy loading). Make sure the page has fully
-                loaded and scroll through the page before tapping the collect button.
-            </p>
-        </div>
-
-        <div class="card" style="margin-top: 1rem;">
-            <p><strong>Where are my downloads saved?</strong></p>
-            <p>
-                You can save media directly to your iOS Photo Library or to a dedicated
-                "SourceExtract" folder in your Files app. Permissions can be managed
-                in your iOS Settings.
-            </p>
-        </div>
-
-        <div class="card" style="margin-top: 1rem;">
-            <p><strong>Why are some images skipped during deduplication?</strong></p>
-            <p>
-                SourceExtract identifies duplicates based on exact source URLs. If the same
-                image is hosted at different URLs, both may appear. However, identical URLs
-                are only shown once to keep results clean and organized.
-            </p>
-        </div>
-
-        <p style="margin-top: 2rem; font-size: 0.85rem; color: var(--text-secondary);">
-            *Tip: Remember to replace the placeholder email and add your GitHub link before publishing.
-        </p>
-    </div>
+    </main>
 
     <footer>
-        <p>&copy; 2026 SourceExtract. All Rights Reserved.</p>
-        <p style="margin-top: 10px;">
-            <a href="privacy.html" style="color: var(--text-secondary); text-decoration: none;">
-                Privacy Policy
-            </a>
-        </p>
+        <p>&copy; 2026 SourceExtract. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="privacy.html">Privacy Policy</a>
+        </div>
     </footer>
 
 </body>
