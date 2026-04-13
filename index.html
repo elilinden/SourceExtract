@@ -3,13 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SourceExtract - Web Media Extractor</title>
+    <title>SourceExtract — Find Every Image &amp; Video on Any Webpage</title>
+    <meta name="description" content="SourceExtract is the iOS browser that finds media other tools miss. Extract every image and video from any webpage — including hidden CSS backgrounds, shadow DOM, and dynamically loaded assets.">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <h2>SourceExtract</h2>
+        <a href="index.html" class="logo">
+            <div class="logo-icon">
+                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="5" height="5" rx="1" fill="#3b82f6"/>
+                    <rect x="9" y="2" width="5" height="5" rx="1" fill="#3b82f6" opacity="0.5"/>
+                    <rect x="2" y="9" width="5" height="5" rx="1" fill="#3b82f6" opacity="0.5"/>
+                    <rect x="9" y="9" width="5" height="5" rx="1" fill="#3b82f6" opacity="0.3"/>
+                </svg>
+            </div>
+            SourceExtract
+        </a>
         <nav class="nav-links">
             <a href="index.html">Home</a>
             <a href="support.html">Support</a>
@@ -17,115 +28,241 @@
         </nav>
     </header>
 
-    <!-- HERO -->
-    <section class="hero">
-        <h1>Find every image.<br>Capture every video.</h1>
+    <main>
 
-        <p>
-            SourceExtract is a powerful iOS browser that scans deeper than any tool —
-            uncovering hidden media across webpages in seconds.
-        </p>
-
-        <a href="#" class="cta">Download on the App Store</a>
-    </section>
-
-    <!-- CORE FEATURES -->
-    <section class="features">
-
-        <div class="card">
-            <h3>Deep Scanning Engine</h3>
-            <p>
-                Go beyond surface-level content. SourceExtract extracts media hidden in
-                CSS backgrounds, shadow DOM elements, and dynamically loaded assets.
+        <!-- ─── Hero ────────────────────────────────────── -->
+        <section class="hero">
+            <div class="hero-eyebrow">
+                <span class="dot"></span>
+                Available on the App Store
+            </div>
+            <h1>
+                Browse any website.<br>
+                <span class="gradient">Extract every image and video.</span><br>
+                Save them all.
+            </h1>
+            <p class="subtitle">
+                SourceExtract is the only browser that finds media other tools miss.
+                Open a page, tap the sparkle button, and within seconds you'll see every
+                image and video on that page &mdash; including ones hidden in stylesheets,
+                loaded dynamically, or tucked inside shadow DOM elements.
             </p>
-        </div>
+            <div class="hero-actions">
+                <a href="#" class="cta">Download on the App Store</a>
+                <a href="#features" class="cta-ghost">See how it works</a>
+            </div>
+        </section>
 
-        <div class="card">
-            <h3>Four Discovery Methods</h3>
-            <p>
-                Combines DOM parsing, video detection, CSS scanning, and network monitoring
-                to ensure no image or video goes unnoticed.
+        <div class="section-divider"></div>
+
+        <!-- ─── Four Discovery Methods ─────────────────── -->
+        <section class="section" id="features">
+            <div class="section-label">Discovery Engine</div>
+            <h2 class="section-title">Four ways to find media</h2>
+            <p class="section-desc">
+                Most download tools only see what's visible on the surface.
+                SourceExtract goes deeper with four independent discovery methods.
             </p>
-        </div>
 
-        <div class="card">
-            <h3>Download Everything</h3>
-            <p>
-                Select one or hundreds of files and download them instantly with a fast,
-                concurrent download manager built for performance.
+            <div class="grid-4">
+                <div class="card">
+                    <div class="card-icon">&#128444;&#65039;</div>
+                    <h3>IMG &amp; Picture Tags</h3>
+                    <p>Standard images, srcset variants, SVG files, and picture elements extracted directly from page HTML.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">&#127916;</div>
+                    <h3>Video Tags</h3>
+                    <p>Embedded video elements and all associated source files detected across the page DOM.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">&#127912;</div>
+                    <h3>CSS Backgrounds</h3>
+                    <p>Images applied through stylesheets, discovered by scanning up to 2,500 page elements.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">&#127760;</div>
+                    <h3>Network Resources</h3>
+                    <p>Media loaded during the page lifecycle, captured via the Performance API.</p>
+                </div>
+            </div>
+
+            <div class="detail-card" style="margin-top: 1.5rem;">
+                <p>The scanner also penetrates Shadow DOM, traverses same-origin iframes, and resolves blob and data URLs &mdash; so nothing slips through.</p>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- ─── Preview, Filter & Sort ─────────────────── -->
+        <section class="section">
+            <div class="section-label">Results</div>
+            <h2 class="section-title">Preview, filter &amp; sort</h2>
+            <p class="section-desc">
+                Browse your results with tools that make it easy to find exactly what you're looking for.
             </p>
-        </div>
 
-        <div class="card">
-            <h3>Smart Deduplication</h3>
-            <p>
-                Automatically filters duplicate media so you only see unique, high-quality
-                results without clutter.
+            <div class="grid-2">
+                <div class="detail-card">
+                    <h3>Browse &amp; organize</h3>
+                    <p>Once the scan completes, browse results in a clean grid or list view. Filter by images, videos, or all media. Sort by page order, largest first, or smallest first.</p>
+                    <p>Each item shows its dimensions, file size, and a badge indicating how it was discovered.</p>
+                </div>
+                <div class="detail-card">
+                    <h3>Full-size preview</h3>
+                    <p>Tap any result for a full-size preview with pinch-to-zoom, swipe navigation between items, and one-tap options to share or copy the URL.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- ─── Download Everything ────────────────────── -->
+        <section class="section">
+            <div class="section-label">Downloads</div>
+            <h2 class="section-title">Download everything at once</h2>
+            <p class="section-desc">
+                A built-in download manager designed for speed and reliability.
             </p>
-        </div>
 
-        <div class="card">
-            <h3>Preview & Organize</h3>
-            <p>
-                View media in a clean grid, sort by size or order, and preview items
-                before downloading with smooth navigation.
+            <div class="grid-2">
+                <div class="detail-card">
+                    <h3>Batch downloads</h3>
+                    <p>Select the items you want &mdash; or select all &mdash; and download in a single tap. The built-in download manager runs concurrent downloads, shows real-time progress, and validates every file to ensure you're saving actual media and not error pages.</p>
+                    <p>Any failed downloads can be retried individually.</p>
+                </div>
+                <div class="detail-card">
+                    <h3>Save your way</h3>
+                    <p>When your downloads finish, save directly to your Photos library or share through the system share sheet.</p>
+                    <p>Your files, your choice.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- ─── Bookmarks & History ────────────────────── -->
+        <section class="section">
+            <div class="section-label">Organization</div>
+            <h2 class="section-title">Bookmarks &amp; collection history</h2>
+            <p class="section-desc">
+                Save pages and revisit past scans without re-browsing.
             </p>
-        </div>
 
-        <div class="card">
-            <h3>Private by Design</h3>
-            <p>
-                No accounts. No tracking. Everything stays on your device. Your browsing
-                and downloads are never sent to external servers.
+            <div class="detail-card">
+                <p>Bookmark pages you return to often for instant access. SourceExtract also keeps a history of every scan, including a snapshot of what was found &mdash; so you can revisit results from any page you've previously scanned without having to browse back to it.</p>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- ─── Customize Your Scan ────────────────────── -->
+        <section class="section">
+            <div class="section-label">Settings</div>
+            <h2 class="section-title">Customize your scan</h2>
+            <p class="section-desc">
+                Fine-tune how SourceExtract discovers and handles media.
             </p>
-        </div>
 
-    </section>
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-icon">&#9881;&#65039;</div>
+                    <h3>Method toggles</h3>
+                    <p>Toggle each discovery method on or off independently to scan exactly the way you want.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">&#128260;</div>
+                    <h3>Auto-rescan</h3>
+                    <p>Enable auto-rescan to automatically re-collect media after a page reload.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">&#128279;</div>
+                    <h3>Deduplication</h3>
+                    <p>Adjust deduplication settings to control how the app handles matching results across methods.</p>
+                </div>
+            </div>
+        </section>
 
-    <!-- HOW IT WORKS -->
-    <section class="features" style="padding-top: 2rem;">
-        <div class="card">
-            <h3>1. Open Any Website</h3>
-            <p>
-                Browse normally using the built-in SourceExtract browser.
+        <div class="section-divider"></div>
+
+        <!-- ─── Built for iPhone and iPad ──────────────── -->
+        <section class="section">
+            <div class="section-label">Design</div>
+            <h2 class="section-title">Built for iPhone and iPad</h2>
+            <p class="section-desc">
+                A native experience designed to feel at home on iOS.
             </p>
-        </div>
 
-        <div class="card">
-            <h3>2. Tap the Extract Button</h3>
-            <p>
-                Instantly scan the page using multiple detection methods.
+            <div class="detail-card">
+                <p>A glass-morphism interface with smooth animations and collapsible browser chrome that stays out of your way while you're browsing. Tab overview shows live visual previews of every open tab.</p>
+
+                <div class="format-list">
+                    <span class="format-tag">PNG</span>
+                    <span class="format-tag">JPG</span>
+                    <span class="format-tag">GIF</span>
+                    <span class="format-tag">WebP</span>
+                    <span class="format-tag">AVIF</span>
+                    <span class="format-tag">SVG</span>
+                    <span class="format-tag">BMP</span>
+                    <span class="format-tag">ICO</span>
+                    <span class="format-tag">TIFF</span>
+                    <span class="format-tag">HEIC</span>
+                    <span class="format-tag">MP4</span>
+                    <span class="format-tag">MOV</span>
+                    <span class="format-tag">WebM</span>
+                    <span class="format-tag">+ more</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- ─── How It Works ───────────────────────────── -->
+        <section class="section" id="how">
+            <div class="section-label">Quick Start</div>
+            <h2 class="section-title">Three steps. That's it.</h2>
+            <p class="section-desc">
+                No setup, no configuration, no learning curve.
             </p>
-        </div>
 
-        <div class="card">
-            <h3>3. Preview & Download</h3>
+            <div class="grid-3">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <h3>Open any website</h3>
+                    <p>Browse normally using the built-in SourceExtract browser. Navigate to any page with media you want to save.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <h3>Tap the sparkle button</h3>
+                    <p>Instantly scan the page using all four discovery methods. Results appear within seconds.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <h3>Preview &amp; download</h3>
+                    <p>Browse results, select what you want, and download everything in one tap.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- ─── Closing CTA ────────────────────────────── -->
+        <section class="closing">
+            <h2>No accounts. No subscriptions. No tracking.</h2>
             <p>
-                Select the media you want and download everything in one tap.
+                Just a fast, private tool for getting the media you want off the web.
             </p>
-        </div>
-    </section>
+            <a href="#" class="cta">Download on the App Store</a>
+        </section>
 
-    <!-- CTA SECTION -->
-    <section class="hero" style="padding-top: 3rem;">
-        <h1 style="font-size: 2.5rem;">Built for speed. Designed for simplicity.</h1>
-        <p>
-            The fastest way to extract images and videos from any webpage on iPhone or iPad.
-        </p>
-        <a href="#" class="cta">Get SourceExtract</a>
-    </section>
+    </main>
 
-    <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 SourceExtract. All Rights Reserved.</p>
-        <p style="margin-top: 10px;">
-            <a href="support.html" style="color: var(--text-secondary); text-decoration: none;">
-                Support
-            </a> |
-            <a href="privacy.html" style="color: var(--text-secondary); text-decoration: none;">
-                Privacy Policy
-            </a>
-        </p>
+        <p>&copy; 2026 SourceExtract. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="support.html">Support</a>
+            <a href="privacy.html">Privacy Policy</a>
+        </div>
     </footer>
 
 </body>
